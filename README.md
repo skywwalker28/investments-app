@@ -69,12 +69,8 @@ docker-compose down
 2.	Run InvestmentsApplication.java from your IDE as a Spring Boot application.
 3.	The app starts on http://localhost:8080.
 ---
-## API
-Swagger автоматически генерирует документацию для всех контроллеров:
-http://localhost:8080/swagger-ui/index.html
----
 
-Author
+Author: Artur (Telegram: @wskywalk)
 
 
 
