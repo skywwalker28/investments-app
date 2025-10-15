@@ -1,91 +1,81 @@
 # Investment App
 
-Учебный **pet-проект** на Spring Boot + Kotlin + PostgreSQL + JWT + Docker, моделирующий мини-инвестиционную платформу.
+A mini investment platform built with Spring Boot, Kotlin, PostgreSQL, JWT, and Docker.
+This pet project simulates basic investment operations and portfolio management.
 
 ---
 
-## Функционал
+##  Features
+- User registration and login with JWT authentication
+- Create and manage accounts
+- Deposit money into accounts
+- Buy and sell stocks
+- View transaction history
+- Track portfolio profit and loss
+- Swagger UI for interactive API documentation
 
-- Регистрация и авторизация пользователей (JWT)
-- Создание и пополнение счетов
-- Просмотр истории транзакций
-- Покупка и продажа акций
-- Расчёт прибыли и убытков по портфелю
-- Swagger UI для тестирования API
-
----
-
-## Технологии
-
-- Spring Boot 3
-- Kotlin + Java
-- Spring Security с JWT
-- PostgreSQL + JPA/Hibernate
-- Docker + Docker Compose
-- Swagger (OpenAPI)
 
 ---
 
-## Переменные окружения
+## Technologies
+•	Spring Boot 3
+•	Kotlin & Java (backend services)
+•	Spring Security with JWT
+•	PostgreSQL + JPA/Hibernate
+•	Docker & Docker Compose
+•	Swagger (OpenAPI)
 
-Создайте файл `.env` в корне проекта на основе `.env.example` и заполните реальные значения:
+---
 
-# Database
+## Environment Variables
+
+Create a `.env` file in the project root based on `.env.example`. Fill in your credentials and JWT secret:
+
+### Database
 ```
 SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/investments_app
 SPRING_DATASOURCE_USERNAME=your_db_username
 SPRING_DATASOURCE_PASSWORD=your_db_password
 ```
-# JWT
+### JWT
 ```
 JWT_SECRET=your_jwt_secret
 JWT_EXPIRATION=86400000
 ```
-# Spring
+### Spring
 ```
 SPRING_PROFILES_ACTIVE=dev
 ```
 
 
-## Запуск Проекта
-
-### Через Docker
-В корне проекта, где лежит docker-compose.yml, выполните:
+## Running the Project
+### Using Docker
+1.	Copy .env.example to .env and fill in real values.
+2.	Run the following command in the project root (where docker-compose.yml is):
 ```
-cp .env.example .env          # создаём локальный .env
 docker-compose up --build
 ```
-•	Приложение будет доступно по адресу: http://localhost:8080
-•	Swagger UI: http://localhost:8080/swagger-ui/index.html
+3. The app will be available at: http://localhost:8080
+4. Swagger UI: http://localhost:8080/swagger-ui/index.html
 
-Для остановки:
+To stop the app:
+
 ```
 docker-compose down
 ```
 
-###  Локально через IDE
-1.	Настройте переменные окружения из .env или укажите их в application.properties.
-2.	Запустите InvestmentsApplication.java как обычное Spring Boot приложение.
-3.	Приложение стартует на http://localhost:8080.
+### Running Locally
+1.	Configure environment variables or application.properties.
+2.	Run InvestmentsApplication.java from your IDE as a Spring Boot application.
+3.	The app starts on http://localhost:8080.
 ---
 ## API
 Swagger автоматически генерирует документацию для всех контроллеров:
 http://localhost:8080/swagger-ui/index.html
 ---
-## Структура проекта
-investments/
-│
-├── src/main/kotlin        # Kotlin пакеты: Controller, DTO, Model, Repository, Security, Config
-├── src/main/java          # Java пакеты: Service
-├── src/main/resources/    # application.properties
-├── Dockerfile
-├── docker-compose.yml
-├── .env.example
-├── .gitignore
-└── README.md
----
-Автор
-Артур — студент МИРЭА, pet-проекты на Spring Boot + Kotlin.
+
+Author
+
 
 
 
