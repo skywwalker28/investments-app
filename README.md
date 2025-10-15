@@ -18,12 +18,12 @@ This pet project simulates basic investment operations and portfolio management.
 ---
 
 ## Technologies
-•	Spring Boot 3
-•	Kotlin & Java (backend services)
-•	Spring Security with JWT
-•	PostgreSQL + JPA/Hibernate
-•	Docker & Docker Compose
-•	Swagger (OpenAPI)
+- Spring Boot 3
+- Kotlin & Java (backend services)
+- Spring Security with JWT
+- PostgreSQL + JPA/Hibernate
+- Docker & Docker Compose
+- Swagger (OpenAPI)
 
 ---
 
