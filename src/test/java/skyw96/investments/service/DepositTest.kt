@@ -8,7 +8,7 @@ import org.mockito.Mock
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
-import skyw96.investments.Java.Service.AccountsService
+import skyw96.investments.Java.AccountsService
 import skyw96.investments.Kotlin.Model.Accounts
 import skyw96.investments.Kotlin.Model.Transactions
 import skyw96.investments.Kotlin.Model.User

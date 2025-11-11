@@ -1,4 +1,4 @@
-package skyw96.investments.Java.Service;
+package skyw96.investments.Java;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

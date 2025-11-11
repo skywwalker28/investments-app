@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import skyw96.investments.Java.Service.AccountsService
+import skyw96.investments.Java.AccountsService
 import skyw96.investments.Kotlin.DTO.AccountsDTO
 import skyw96.investments.Kotlin.Repository.UserRepository
 import skyw96.investments.Kotlin.Security.SecurityContextService

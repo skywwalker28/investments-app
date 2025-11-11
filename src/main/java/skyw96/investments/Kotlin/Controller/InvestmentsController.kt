@@ -1,8 +1,7 @@
 package skyw96.investments.Kotlin.Controller
 
 import org.springframework.web.bind.annotation.*
-import skyw96.investments.Java.Service.AccountsService
-import skyw96.investments.Java.Service.InvestmentsService
+import skyw96.investments.Java.InvestmentsService
 import skyw96.investments.Kotlin.DTO.PortfolioDTO
 import skyw96.investments.Kotlin.DTO.TransactionsDTO
 import skyw96.investments.Kotlin.Security.SecurityContextService

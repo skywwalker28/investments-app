@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import org.mockito.*
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
-import skyw96.investments.Java.Service.AccountsService
+import skyw96.investments.Java.AccountsService
 import skyw96.investments.Kotlin.Model.Accounts
 import skyw96.investments.Kotlin.Model.User
 

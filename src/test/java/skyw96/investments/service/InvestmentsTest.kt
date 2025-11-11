@@ -8,8 +8,8 @@ import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
-import skyw96.investments.Java.Service.AccountsService
-import skyw96.investments.Java.Service.InvestmentsService
+import skyw96.investments.Java.AccountsService
+import skyw96.investments.Java.InvestmentsService
 import skyw96.investments.Kotlin.Exception.AccountNotFoundException
 import skyw96.investments.Kotlin.Exception.InsufficientFundsException
 import skyw96.investments.Kotlin.Model.*

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import skyw96.investments.Java.Service.UserService
+import skyw96.investments.Java.UserService
 import skyw96.investments.Kotlin.DTO.UserDTO
 import skyw96.investments.Kotlin.Exception.EmailNotFoundException
 import skyw96.investments.Kotlin.Repository.UserRepository

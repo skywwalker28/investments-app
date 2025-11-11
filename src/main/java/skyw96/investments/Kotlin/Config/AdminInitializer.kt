@@ -3,7 +3,7 @@ package skyw96.investments.Kotlin.Config
 import org.springframework.boot.ApplicationRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import skyw96.investments.Java.Service.UserService
+import skyw96.investments.Java.UserService
 import skyw96.investments.Kotlin.Repository.UserRepository
 
 @Configuration

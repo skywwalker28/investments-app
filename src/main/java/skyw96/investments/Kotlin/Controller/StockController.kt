@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import skyw96.investments.Java.Service.StockService
+import skyw96.investments.Java.StockService
 import skyw96.investments.Kotlin.DTO.StockDTO
 import java.math.BigDecimal
 

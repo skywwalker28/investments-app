@@ -6,7 +6,7 @@ import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
 import org.springframework.security.crypto.password.PasswordEncoder
-import skyw96.investments.Java.Service.UserService
+import skyw96.investments.Java.UserService
 import skyw96.investments.Kotlin.Exception.EmailAlreadyExistException
 import skyw96.investments.Kotlin.Model.Portfolio
 import skyw96.investments.Kotlin.Model.User

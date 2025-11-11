@@ -1,4 +1,4 @@
-package skyw96.investments.Java.Service;
+package skyw96.investments.Java;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
