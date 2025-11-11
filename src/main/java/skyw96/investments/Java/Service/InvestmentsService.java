@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import skyw96.investments.Kotlin.Exception.*;
 import skyw96.investments.Kotlin.Model.*;
 import skyw96.investments.Kotlin.Repository.*;
+import skyw96.investments.Kotlin.Security.SecurityContextService;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -33,6 +35,9 @@ public class InvestmentsService {
     AccountsService accountsService;
 
     @Autowired
+    SecurityContextService securityContextService;
+
+    @Autowired
     StockPurchasesRepository stockPurchasesRepository;
 
 
@@ -47,26 +52,20 @@ public class InvestmentsService {
     @Transactional
     public Portfolio investments(String ticker, int quantity, Long accountId) {
         Stock stock = stockRepository.findByTicker(ticker);
-        String email = accountsService.getCurrentUserEmail();
+        String email = securityContextService.getCurrentUserEmail();
 
         Accounts account = accountsService.getAccountById(accountId);
 
         if (stock == null) {
             throw new StockNotFoundException("Stock with ticker: " + ticker + ", not found");
         }
-        if (!account.getUser().getEmail().equals(accountsService.getCurrentUserEmail())) {
+        if (!account.getUser().getEmail().equals(securityContextService.getCurrentUserEmail())) {
             throw new AccountNotFoundException("Account does not belong to current user");
         }
 
         BigDecimal priceForBuy = stock.getCurrentPrice();
         BigDecimal amount = priceForBuy.multiply(BigDecimal.valueOf(quantity));
 
-        StockPurchases stockPurchases = new StockPurchases();
-        stockPurchases.setTicker(ticker);
-        stockPurchases.setQuantity(quantity);
-        stockPurchases.setPurchasePrice(priceForBuy);
-        stockPurchases.setUser(userRepository.findByEmail(email));
-        stockPurchasesRepository.save(stockPurchases);
 
 
         String description = "The user with email \"" + email + "\" bought " + quantity + " stocks of " + ticker +
@@ -81,6 +80,15 @@ public class InvestmentsService {
             throw new InsufficientFundsException("Not enough money on account. Current balance: " + currentBalance +
                     ", required: " + amount);
         }
+
+        StockPurchases stockPurchases = new StockPurchases();
+        stockPurchases.setTicker(ticker);
+        stockPurchases.setQuantity(quantity);
+        stockPurchases.setPurchasePrice(priceForBuy);
+        stockPurchases.setUser(userRepository.findByEmail(email));
+        stockPurchasesRepository.save(stockPurchases);
+
+
         BigDecimal newBalance = currentBalance.subtract(amount);
 
         account.setBalance(newBalance);
@@ -111,7 +119,7 @@ public class InvestmentsService {
     @Transactional
     public Portfolio saleOfStocks(String ticker, int quantity, Long accountId) {
 
-        String email = accountsService.getCurrentUserEmail();
+        String email = securityContextService.getCurrentUserEmail();
         Portfolio portfolio = portfolioRepository.findByUserEmailAndTicker(email, ticker).orElseThrow(() ->
                 new StockNotFoundException("Stock with ticker: " + ticker + ", not found"));
         if (portfolio.getQuantity() - quantity < 0) {

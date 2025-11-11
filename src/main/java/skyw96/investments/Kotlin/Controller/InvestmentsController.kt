@@ -5,17 +5,19 @@ import skyw96.investments.Java.Service.AccountsService
 import skyw96.investments.Java.Service.InvestmentsService
 import skyw96.investments.Kotlin.DTO.PortfolioDTO
 import skyw96.investments.Kotlin.DTO.TransactionsDTO
+import skyw96.investments.Kotlin.Security.SecurityContextService
 
 @RestController
 @RequestMapping("/api")
 class InvestmentsController (
     private val transactionsService: InvestmentsService,
-    private val accountsService: AccountsService
+    private val securityContextService: SecurityContextService
 ){
 
     @GetMapping("/investments/viewMyStocks")
     fun viewMyStocks() : List<PortfolioDTO> {
-        val accounts = transactionsService.viewMyStocks(accountsService.currentUserEmail)
+        val accounts = transactionsService
+            .viewMyStocks(securityContextService.getCurrentUserEmail())
         return accounts.map { PortfolioDTO.fromEntity(it) }
     }
 

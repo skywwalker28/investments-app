@@ -23,4 +23,6 @@ data class Accounts (
     constructor(user: User) : this(null, BigDecimal.ZERO, LocalDateTime.now(), user)
 
     constructor() : this(null, BigDecimal.ZERO, LocalDateTime.now(), User())
+
+    constructor(id: Long?, balance: BigDecimal, user: User) : this(id, balance, LocalDateTime.now(), user)
 }

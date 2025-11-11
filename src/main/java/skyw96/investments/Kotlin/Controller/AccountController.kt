@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 import skyw96.investments.Java.Service.AccountsService
 import skyw96.investments.Kotlin.DTO.AccountsDTO
 import skyw96.investments.Kotlin.Repository.UserRepository
+import skyw96.investments.Kotlin.Security.SecurityContextService
 import java.math.BigDecimal
 
 
@@ -17,12 +18,14 @@ import java.math.BigDecimal
 @RequestMapping("/api")
 class AccountController (
     private val userRepository: UserRepository,
-    private val accountsService: AccountsService
+    private val accountsService: AccountsService,
+    private val securityContextService: SecurityContextService
 ) {
 
     @GetMapping("/accounts/view")
     fun viewAccount() : List<AccountsDTO>{
-        val accounts = accountsService.viewAccounts(accountsService.currentUserEmail)
+        val accounts = accountsService.viewAccounts(securityContextService.
+        getCurrentUserEmail())
         return accounts.map { AccountsDTO.fromEntity(it) }
     }
 
@@ -30,7 +33,7 @@ class AccountController (
     @PostMapping("/accounts/create")
     fun createAccount() : AccountsDTO {
 
-        val user = userRepository.findByEmail(accountsService.currentUserEmail)
+        val user = userRepository.findByEmail(securityContextService.getCurrentUserEmail())
         val createUser = accountsService.createAccount(user)
 
         return AccountsDTO.fromEntity(createUser)
