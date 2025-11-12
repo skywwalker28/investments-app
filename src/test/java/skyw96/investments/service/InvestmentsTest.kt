@@ -20,7 +20,8 @@ import java.util.*
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
-class InvestmentsTest {
+class
+InvestmentsTest {
 
     @Mock
     private lateinit var stockRepository: StockRepository
@@ -61,7 +62,7 @@ class InvestmentsTest {
         user = User("testName", "testLastname", "test@gmail.com",
             "12345", setOf("USER"))
         account = Accounts(1L, BigDecimal(1000), user)
-        stock = Stock(1L, "IBM", "International Business Machine",
+        stock = Stock(1L, "IBM", "testDescription",
             BigDecimal(150), BigDecimal(123), 12.0, "+10%", BigDecimal(135))
         portfolio = Portfolio(user, "IBM", 2)
     }

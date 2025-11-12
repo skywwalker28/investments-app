@@ -132,7 +132,6 @@ public class InvestmentsService {
 
 
         Accounts account = accountsService.getAccountById(accountId);
-
         BigDecimal amount = account.getBalance().add(stock.getCurrentPrice().multiply(BigDecimal.valueOf(quantity)));
         account.setBalance(amount);
 

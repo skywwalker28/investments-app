@@ -10,6 +10,5 @@ interface PortfolioRepository : JpaRepository<Portfolio, Long> {
     fun findByUserEmail(email: String): List<Portfolio>
     fun findByUserEmailAndTicker(email: String, ticker: String?): Optional<Portfolio>
 
-    fun existsByUserEmail(email: String): Boolean
     fun existsByUserEmailAndTicker(email: String, ticker: String?): Boolean
 }
