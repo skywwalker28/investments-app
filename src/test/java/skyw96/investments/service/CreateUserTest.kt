@@ -6,11 +6,11 @@ import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
 import org.springframework.security.crypto.password.PasswordEncoder
-import skyw96.investments.Java.UserService
-import skyw96.investments.Kotlin.Exception.EmailAlreadyExistException
-import skyw96.investments.Kotlin.Model.Portfolio
-import skyw96.investments.Kotlin.Model.User
-import skyw96.investments.Kotlin.Repository.*
+import skyw96.investments.java.UserService
+import skyw96.investments.kotlin.exception.EmailAlreadyExistException
+import skyw96.investments.kotlin.model.Portfolio
+import skyw96.investments.kotlin.model.User
+import skyw96.investments.kotlin.repository.*
 import kotlin.test.assertEquals
 
 class CreateUserTest {

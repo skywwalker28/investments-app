@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test
 import org.mockito.*
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
-import skyw96.investments.Java.AccountsService
-import skyw96.investments.Kotlin.Model.Accounts
-import skyw96.investments.Kotlin.Model.User
+import skyw96.investments.java.AccountsService
+import skyw96.investments.kotlin.model.Accounts
+import skyw96.investments.kotlin.model.User
 
-import skyw96.investments.Kotlin.Repository.AccountsRepository
-import skyw96.investments.Kotlin.Repository.TransactionsRepository
+import skyw96.investments.kotlin.repository.AccountsRepository
+import skyw96.investments.kotlin.repository.TransactionsRepository
 
 class CreateAccount {
 
